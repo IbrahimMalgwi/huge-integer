@@ -62,7 +62,6 @@ public class HugeInteger {
         }
        return false;
     }
-
     public static boolean isLessThan(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
         int count = 0;
 
@@ -79,7 +78,6 @@ public class HugeInteger {
         }
         return false;
     }
-
     public static boolean isEquals(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
         int count = 0;
 
@@ -114,16 +112,50 @@ public class HugeInteger {
         return false;
     }
 
+    public static boolean isGreaterThanOrEquals(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
+        int count = 0;
+
+        int hugeInteger1Sum = 0;
+        int hugeInteger2Sum = 0;
+
+        while (count < 40){
+            hugeInteger1Sum += hugeInteger1.numbers[count];
+            hugeInteger2Sum += hugeInteger2.numbers[count];
+            count++;
+        }
+        if (hugeInteger1Sum >= hugeInteger2Sum) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isLessThanOrEquals(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
+        int count = 0;
+
+        int hugeInteger1Sum = 0;
+        int hugeInteger2Sum = 0;
+
+        while (count < 40){
+            hugeInteger1Sum += hugeInteger1.numbers[count];
+            hugeInteger2Sum += hugeInteger2.numbers[count];
+            count++;
+        }
+        if (hugeInteger1Sum <= hugeInteger2Sum) {
+            return true;
+        }
+        return false;
+    }
+
+
+
 
 
     private void exceedLength() {
         throw new DigitLengthException("you've exceeded the length");
     }
-
     private void containsLetter() {
         throw new NumberFormatException("Only digit is allow");
     }
-
     @Override
     public String toString() {
         return "HugeInteger{" +

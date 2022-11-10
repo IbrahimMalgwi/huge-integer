@@ -99,5 +99,21 @@ class HugeIntegerTest {
         assertTrue(equal);
     }
 
+    @Test
+    void textThatTrueIsReturnIfHugeInteger1GreaterThanOrEqualHugeInteger2(){
+        hugeInteger1.parse("12345");
+        hugeInteger2.parse("73311");
+        boolean greaterOrEqual = HugeInteger.isGreaterThanOrEquals(hugeInteger1, hugeInteger2);
+        assertTrue(greaterOrEqual);
+    }
+
+    @Test
+    void textThatTrueIsReturnIfHugeInteger1LessThanOrEqualHugeInteger2(){
+        hugeInteger1.parse("12343");
+        hugeInteger2.parse("73311");
+        boolean lessOrEqual = HugeInteger.isLessThanOrEquals(hugeInteger1, hugeInteger2);
+        assertTrue(lessOrEqual);
+    }
+
 
 }
