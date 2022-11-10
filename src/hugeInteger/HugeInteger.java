@@ -45,40 +45,73 @@ public class HugeInteger {
         return hugeInteger;
     }
 
-    public static boolean greaterThan(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
+    public static boolean isGreaterThan(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
         int count = 0;
 
         int hugeInteger1Sum = 0;
         int hugeInteger2Sum = 0;
 
-        for (int i = 0; i < count; i++) {
-            hugeInteger1Sum += hugeInteger1.numbers[i];
-            hugeInteger2Sum += hugeInteger2.numbers[i];
+        while (count < 40){
+            hugeInteger1Sum += hugeInteger1.numbers[count];
+            hugeInteger2Sum += hugeInteger2.numbers[count];
+            count++;
         }
 
         if (hugeInteger1Sum > hugeInteger2Sum) {
             return true;
         }
-       else return false;
+       return false;
     }
 
-    public static boolean lessThan(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
+    public static boolean isLessThan(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
         int count = 0;
 
         int hugeInteger1Sum = 0;
         int hugeInteger2Sum = 0;
 
-        for (int i = 0; i < count; i++) {
-            hugeInteger1Sum += hugeInteger1.numbers[i];
-            hugeInteger2Sum += hugeInteger2.numbers[i];
+        while (count < 40){
+            hugeInteger1Sum += hugeInteger1.numbers[count];
+            hugeInteger2Sum += hugeInteger2.numbers[count];
+            count++;
         }
         if (hugeInteger1Sum < hugeInteger2Sum) {
             return true;
         }
-        else return false;
+        return false;
     }
 
-    public static void isEquals(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
+    public static boolean isEquals(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
+        int count = 0;
+
+        int hugeInteger1Sum = 0;
+        int hugeInteger2Sum = 0;
+
+        while (count < 40){
+            hugeInteger1Sum += hugeInteger1.numbers[count];
+            hugeInteger2Sum += hugeInteger2.numbers[count];
+            count++;
+        }
+        if (hugeInteger1Sum == hugeInteger2Sum) {
+            return true;
+        }
+        return false;
+    }
+
+    public static boolean isNotEquals(HugeInteger hugeInteger1, HugeInteger hugeInteger2) {
+        int count = 0;
+
+        int hugeInteger1Sum = 0;
+        int hugeInteger2Sum = 0;
+
+        while (count < 40){
+            hugeInteger1Sum += hugeInteger1.numbers[count];
+            hugeInteger2Sum += hugeInteger2.numbers[count];
+            count++;
+        }
+        if (hugeInteger1Sum != hugeInteger2Sum) {
+            return true;
+        }
+        return false;
     }
 
 

@@ -71,22 +71,32 @@ class HugeIntegerTest {
     void textThatTrueIsReturnIfHugeInteger1IsGreaterThanHugeInteger2(){
         hugeInteger1.parse("4556");
         hugeInteger2.parse("2334");
-        HugeInteger.greaterThan(hugeInteger1, hugeInteger2);
+        boolean greater = HugeInteger.isGreaterThan(hugeInteger1, hugeInteger2);
+        assertTrue(greater);
     }
 
     @Test
     void textThatTrueIsReturnIfHugeInteger1IsLessThanHugeInteger2(){
-        hugeInteger1.parse("4556");
-        hugeInteger2.parse("2334");
-        HugeInteger.lessThan(hugeInteger1, hugeInteger2);
+        hugeInteger1.parse("2334");
+        hugeInteger2.parse("4556");
+        boolean less = HugeInteger.isLessThan(hugeInteger1, hugeInteger2);
+        assertTrue(less);
     }
 
     @Test
     void textThatTrueIsReturnIfHugeInteger1IsEqualHugeInteger2(){
         hugeInteger1.parse("12345");
         hugeInteger2.parse("73311");
-        HugeInteger.isEquals(hugeInteger1, hugeInteger2);
+        boolean equal = HugeInteger.isEquals(hugeInteger1, hugeInteger2);
+        assertTrue(equal);
+    }
 
+    @Test
+    void textThatTrueIsReturnIfHugeInteger1IsNotEqualHugeInteger2(){
+        hugeInteger1.parse("12346");
+        hugeInteger2.parse("73311");
+        boolean equal = HugeInteger.isNotEquals(hugeInteger1, hugeInteger2);
+        assertTrue(equal);
     }
 
 
